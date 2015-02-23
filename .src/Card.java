@@ -13,12 +13,14 @@ public class Card {
     static final int Queen = 12;
     static final int King = 13;
 
-    private int cardValue;
-    private String cardSuit;
+    private int value;
+    private int suit;
 
     //Constructor
-    Card(int cardValue, String cardSuit ) {
-        this.cardValue = cardValue;
-        this.cardSuit = cardSuit;
+
+
+    public Card(int cardValue, int cardSuit) {
+        this.value = cardValue;
+        this.suit = cardSuit;
     }
 }
