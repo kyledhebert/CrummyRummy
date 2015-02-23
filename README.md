@@ -1,2 +1,2 @@
 # CrummyRummy
-A Command-line Java game written in Java
+A single-player card game that allows the player to play a game of Rummy versus the computer.
