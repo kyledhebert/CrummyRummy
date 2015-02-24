@@ -47,8 +47,9 @@ public class Deck {
     public void Shuffle() {
         for (int i = deck.length - 1; i > 0; i--) {
             int randNum = (int)(Math.random()*(i +1));
-            Card toShuffle = deck[i];
-            deck[randNum] = toShuffle;
+            Card cardToShuffle = deck[i];
+            deck[i] = deck[randNum];
+            deck[randNum] = cardToShuffle;
 
         }
         cardsUsed = 0;

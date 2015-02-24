@@ -22,7 +22,7 @@ public class Card {
     private int suit;
 
     //creates a card with a suit and value
-    public Card(int cardValue, int cardSuit) {
+    public Card(int cardSuit, int cardValue) {
         this.value = cardValue;
         this.suit = cardSuit;
     }
