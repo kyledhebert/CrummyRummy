@@ -1,12 +1,10 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 
 /**
- * Created by kylehebert on 2/19/15.
- */
-
-/**
- *This object represents a standard deck of playing cards.
+ *Objects of this class represent a standard deck of playing cards.
  * The deck contains 52 cards. After the initial deal, the
  * deck will become the Stock.
  */
@@ -16,7 +14,7 @@ public class Deck {
     /**
      * An array of 52 cards.
      */
-    private Card deck[];
+    private ArrayList<Card> deck = new ArrayList<Card>();
 
     /**
      * Keeps tracks of cards dealt to players as well
@@ -29,11 +27,11 @@ public class Deck {
      * but will be shuffled later.
      */
     public Deck() {
-        this.deck = new Card[52];
+        this.deck = new ArrayList<Card>();
         int cardCount = 0; //tracks how many cards have been created
         for (int suit = 0; suit <=3; suit++) {
             for (int value = 1; value <= 13; value ++) {
-                deck[cardCount] = new Card(suit, value);
+                deck.add(cardCount,new Card(suit, value));
                 cardCount++;
             }
         }
@@ -45,15 +43,12 @@ public class Deck {
      * in a random order.
      */
     public void Shuffle() {
-        for (int i = deck.length - 1; i > 0; i--) {
-            int randNum = (int)(Math.random()*(i +1));
-            Card cardToShuffle = deck[i];
-            deck[i] = deck[randNum];
-            deck[randNum] = cardToShuffle;
-
-        }
+        Collections.shuffle(deck);
         cardsUsed = 0;
+
     }
+
+
 
     /**
      * deals the top card from the deck, this will
@@ -62,7 +57,13 @@ public class Deck {
      */
     public Card dealCard() {
         cardsUsed++;
-        return deck[cardsUsed-1];
+        return deck.remove(cardsUsed-1);
 
     }
+
+    public int getCardsLeft() {
+        return deck.size();
+    }
 }
+
+
