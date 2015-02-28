@@ -15,15 +15,7 @@ public class PlayerHand extends Hand {
     public PlayerHand() {
         playerHand = new ArrayList<Card>();
     }
-    /**
-     * displays the player hand
-     */
-    public void showCards()  {
-        for (Card card: playerHand) {
-            System.out.println((card.getCardAsString()));
-        }
 
 
-    }
 
 }

@@ -57,7 +57,7 @@ public class Deck {
      */
     public Card dealCard() {
         cardsUsed++;
-        return deck.remove(cardsUsed-1);
+        return deck.get(cardsUsed-1);
 
     }
 
